@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app",
     data:{
       tasks: [
-        {name: "Book Train Tickets", isComplete: false},
-        {name: "Do Washing Up", isComplete: false},
-        {name: "Finish MVP", isComplete: false}
+        {name: "Book Train Tickets", isComplete: false, priority: "Low"},
+        {name: "Do Washing Up", isComplete: false, priority: "Low"},
+        {name: "Finish MVP", isComplete: false, priority: "High"}
       ],
       newTask: ""
     },
