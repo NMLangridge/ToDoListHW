@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>To Do List</title>
+  <script src="./js/bundle.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(task, index) in tasks" v-bind:class="task.isComplete? 'complete':'not-complete'">
+        <span>{{task.name}}</span>
+        <span v-if="task.isComplete">Complete</span>
+        <button v-if="!task.isComplete" v-on:click="finishTask(index)">Complete</button>
+      </li>
+    </ul>
+    <form v-on:submit.prevent="saveNewTask">
+      <label for="new-task">Add a new task:</label>
+      <input id="new-task" type="text" v-model="newTask"/>
+      <input type="submit" value="Save New Task"/>
+    </form>
+  </div>
+</body>
+</html>
